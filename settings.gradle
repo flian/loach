@@ -1,0 +1,3 @@
+rootProject.name = 'loach'
+include 'core'
+include 'web'
