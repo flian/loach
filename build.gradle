@@ -21,4 +21,5 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
     compileOnly 'org.projectlombok:lombok:1.18.8'
     annotationProcessor 'org.projectlombok:lombok:1.18.8'
+    compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.1.1'
 }
