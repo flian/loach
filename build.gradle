@@ -2,8 +2,8 @@ plugins {
 	id 'org.springframework.boot' version '2.1.5.RELEASE'
 	id 'java'
 }
-
 apply plugin: 'io.spring.dependency-management'
+
 
 group = 'org.lotus.loach'
 version = '1.0.0-SNAPSHOT'
@@ -19,4 +19,6 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	runtimeOnly 'mysql:mysql-connector-java'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    compileOnly 'org.projectlombok:lombok:1.18.8'
+    annotationProcessor 'org.projectlombok:lombok:1.18.8'
 }
