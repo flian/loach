@@ -1,11 +1,13 @@
 plugins {
-    id 'java'
+	id 'org.springframework.boot' version '2.1.5.RELEASE'
+	id 'java'
 }
 
-group 'org.lotus.loach'
-version '1.0.0-SNAPSHOT'
+apply plugin: 'io.spring.dependency-management'
 
-sourceCompatibility = 1.8
+group = 'org.lotus.loach'
+version = '1.0.0-SNAPSHOT'
+sourceCompatibility = '1.8'
 
 repositories {
     maven { url "https://maven.aliyun.com/nexus/content/groups/public" }
@@ -14,10 +16,7 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-}
-
-allprojects {
-    group = 'org.lotus.loach'
-    version = "1.0.0-SNAPSHOT"
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'mysql:mysql-connector-java'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
