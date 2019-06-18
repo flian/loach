@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper
-        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.lotus.loach.user.mapper.UserMapper">
-    <!-- 这里namespace必须是UserMapper接口的路径” -->
-    <select id="selectByNameAndAge" resultType="org.lotus.loach.user.entity.User"></select>
+    <select id="selectByNameAndAge" resultType="org.lotus.loach.user.entity.User">
+        select * from USER where name=#{name} and age=#{age}
+    </select>
 </mapper>
