@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.lotus.loach.user.entity.User;
 
+import java.util.List;
+
 /**
  * 用户mapper
  *
@@ -14,5 +16,5 @@ import org.lotus.loach.user.entity.User;
  */
 @Mapper
 public interface UserMapper extends BaseMapper<User> {
-    User selectByNameAndAge(@Param("name") String name, @Param("age") Integer age);
+    List<User> selectByNameAndAge(@Param("name") String name, @Param("age") Integer age);
 }
