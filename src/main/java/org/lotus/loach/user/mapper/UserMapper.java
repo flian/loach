@@ -2,6 +2,7 @@ package org.lotus.loach.user.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.lotus.loach.user.entity.User;
 
 /**
@@ -13,4 +14,5 @@ import org.lotus.loach.user.entity.User;
  */
 @Mapper
 public interface UserMapper extends BaseMapper<User> {
+    User selectByNameAndAge(@Param("name") String name, @Param("age") Integer age);
 }
