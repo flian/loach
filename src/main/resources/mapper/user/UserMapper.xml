@@ -4,4 +4,7 @@
     <select id="selectByNameAndAge" resultType="org.lotus.loach.user.entity.User">
         select * from USER where name=#{name} and age=#{age}
     </select>
+    <select id="pageList" resultType="org.lotus.loach.user.entity.User">
+        select * from USER where name=#{name}
+    </select>
 </mapper>

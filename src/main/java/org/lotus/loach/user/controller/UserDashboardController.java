@@ -1,5 +1,6 @@
 package org.lotus.loach.user.controller;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.lotus.loach.common.Response;
 import org.lotus.loach.user.entity.User;
 import org.lotus.loach.user.mapper.UserMapper;
@@ -37,6 +38,16 @@ public class UserDashboardController {
 
     @GetMapping("/listByNameAndAge")
     public Response<List<User>> listByNameAndAge(@RequestParam("name") String name, @RequestParam("age") Integer age) {
-        return Response.create().ok(userMapper.selectByNameAndAge(name,age));
+        return Response.create().ok(userMapper.selectByNameAndAge(name, age));
+    }
+
+    @GetMapping("/listByName")
+    public Response<List<User>> listByName(@RequestParam("name") String name) {
+        return Response.create().ok(userMapper.selectByName(name));
+    }
+
+    @GetMapping("/pageList")
+    public Response<Page<User>> listByNamePage(Page page, @RequestParam("name") String name) {
+        return Response.create().ok(userMapper.pageList(page, name));
     }
 }
